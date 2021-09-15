@@ -8,25 +8,99 @@
 </head>
 <body>
     <?php
-        
+        //error_reporting(E_ERROR | E_PARSE);
+        /*
         $nota1 = $_GET['nota1'] . '<br>';
         $nota2 = $_GET['nota2'] . '<br>';
         $nota3 = $_GET['nota3'] . '<br>';
         $notas = array($nota1, $nota2, $nota3);
 
         $notaMedia = array_sum($notas) / 3;
-        echo "1 - Média das notas do(a) aluno(a): " . $notaMedia;
-        /////////////////////////////////////////////////////////
-        /*
+        echo "1 - Média das notas do(a) aluno(a): " . $notaMedia . '<br><br>';
+
+        /////////////////////////////////////////////////////////*/
+        
+        $mesNum = $_GET['mesNum'];
         $mesNome = $_GET['mesNome'];
 
-        for ($x = 1; $x <= 3; $x++) {
-            if ($mesNome == "Janeiro") {
-                echo "Nome do mês correto."; break;
-            }
+        switch($mesNum) {
+            case 1:
+                $mesNum = "Janeiro";
+                if (strcasecmp($mesNome, $mesNum) == 0) {
+                    echo "2 - Mês correto.<br><br>";
+                }
+                break;
+            case 2:
+                $mesNum = "Fevereiro";
+                if (strcasecmp($mesNome, $mesNum) == 0) {
+                    echo "2 - Mês correto.<br><br>";
+                }
+                break;
+            case 3:
+                $mesNum = "Março";
+                if (strcasecmp($mesNome, $mesNum) == 0) {
+                    echo "2 - Mês correto.<br><br>";
+                }
+                break;
+            case 4:
+                $mesNum = "Abril";
+                if (strcasecmp($mesNome, $mesNum) == 0) {
+                    echo "2 - Mês correto.<br><br>";
+                }
+                break;
+            case 5:
+                $mesNum = "Maio";
+                if (strcasecmp($mesNome, $mesNum) == 0) {
+                    echo "2 - Mês correto.<br><br>";
+                }
+                break;
+            case 6:
+                $mesNum = "Junho";
+                if (strcasecmp($mesNome, $mesNum) == 0) {
+                    echo "2 - Mês correto.<br><br>";
+                }
+                break;
+            case 7:
+                $mesNum = "Julho";
+                if (strcasecmp($mesNome, $mesNum) == 0) {
+                    echo "2 - Mês correto.<br><br>";
+                }
+                break;
+            case 8:
+                $mesNum = "Agosto";
+                if (strcasecmp($mesNome, $mesNum) == 0) {
+                    echo "2 - Mês correto.<br><br>";
+                }
+                break;
+            case 9:
+                $mesNum = "Setembro";
+                if (strcasecmp($mesNome, $mesNum) == 0) {
+                    echo "2 - Mês correto.<br><br>";
+                }
+                break;
+            case 10:
+                $mesNum = "Outubro";
+                if (strcasecmp($mesNome, $mesNum) == 0) {
+                    echo "2 - Mês correto.<br><br>";
+                }
+                break;
+            case 11:
+                $mesNum = "Novembro";
+                if (strcasecmp($mesNome, $mesNum) == 0) {
+                    echo "2 - Mês correto.<br><br>";
+                }
+                break;
+            case 12:
+                $mesNum = "Dezembro";
+                if (strcasecmp($mesNome, $mesNum) == 0) {
+                    echo "2 - Mês correto.<br><br>";
+                }
+                break;
+            default: echo "2 - Mês incorreto.<br><br>"; break;
+                    
         }
-        */
         
+    
     ?>
     <div>
         <p>
@@ -54,7 +128,7 @@
             2 - Crie uma aplicação em PHP que receberá dois valores do usuário: um valor numérico e um de texto:<br>
         </p>
         <form>
-            Insira o dia do mês: <input type="number" name="mesDia"><br>
+            Insira o número do mês: <input type="number" name="mesNum"><br>
             Insira o nome do mês: <input type="text" name="mesNome"><br><br>
             <input type="submit" name="submitNota" value="Enviar">
         </form>
