@@ -8,17 +8,24 @@
 </head>
 <body>
     <?php
-        //error_reporting(E_ERROR | E_PARSE);
-        /*
+        error_reporting(E_ERROR | E_PARSE);
+        // Oi professor, não sei se tá lendo isso mas so to passando pra dizer q eu ia botar comentários explicando os códigos e um CSS pra deixar bonitinho mas sinceramente eu to completamente destruído ent priorizei função doq ~bonitez (╥﹏╥)
+        
         $nota1 = $_GET['nota1'] . '<br>';
         $nota2 = $_GET['nota2'] . '<br>';
         $nota3 = $_GET['nota3'] . '<br>';
         $notas = array($nota1, $nota2, $nota3);
 
         $notaMedia = array_sum($notas) / 3;
-        echo "1 - Média das notas do(a) aluno(a): " . $notaMedia . '<br><br>';
+        if ($notaMedia >= 7 && $notaMedia <= 10) {
+			echo "1 - Média das notas do(a) aluno(a): " . $notaMedia . " - Aprovado.<br><br>";
+		} else if ($notaMedia >= 4 && $notaMedia < 7) {
+			echo "1 - Média das notas do(a) aluno(a): " . $notaMedia . " - Elegível a recuperação.<br><br>";
+		} else if ($notaMedia >= 0 && $notaMedia < 4) {
+			echo "1 - Média das notas do(a) aluno(a): " . $notaMedia . " - Reprovado.<br><br>";
+		}
 
-        /////////////////////////////////////////////////////////*/
+        /////////////////////////////////////////////////////////
         
         $mesNum = $_GET['mesNum'];
         $mesNome = $_GET['mesNome'];
@@ -99,6 +106,20 @@
             default: echo "2 - Mês incorreto.<br><br>"; break;
                     
         }
+
+        /////////////////////////////////////////////////////////
+
+        $numPri = $_GET['numPri'];
+        $numSeg = $_GET['numSeg'];
+        
+        echo "3 - Resultado: ";
+        for($c = 1; $c < $numPri; $c++) {
+            if ($c % $numSeg == 0) {
+                $ar = [$c];
+                echo $c . ", ";
+            }
+        }
+        echo $numPri . ".<br><br>";
         
     
     ?>
@@ -131,7 +152,18 @@
             Insira o número do mês: <input type="number" name="mesNum"><br>
             Insira o nome do mês: <input type="text" name="mesNome"><br><br>
             <input type="submit" name="submitNota" value="Enviar">
-        </form>
+        </form><br><br>
+
+        <p>
+        3 - Crie uma aplicação em PHP que receberá dois valores numéricos inteiros do usuário. Então, a
+        aplicação deve verificar em todos os números naturais até o primeiro número, quais números são divisíveis
+        pelo segundo número.
+        </p>
+        <form>
+            Insira o primeiro número: <input type="number" name="numPri"><br>
+            Insira o segundo número: <input type="number" name="numSeg"><br><br>
+            <input type="submit" name="submitNota" value="Enviar">
+        </form><br><br>
         
     </div>
     
